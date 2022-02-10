@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/jpg" href="img/icon.png">
+    <title>ClimaArg</title>
+  </head>
+  <body id="mo5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary w-100 d-none d-md-block">
+      <div class="container">
+        <a class="navbar-brand fw-bold" id="mo1" href="#">ClimaArg<span id="mo1">.</span></a>
+        <div class="form-check form-switch">
+          <input class="form-check-input" onclick="modoOscuro()" type="checkbox" id="flexSwitchCheckDefault">
+        </div>
+      </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent w-100 d-md-none">
+      <div class="container">
+        <a class="navbar-brand fw-bold" id="mo2" href="#">ClimaArg<span id="mo1">.</span></a>
+        <div class="form-check form-switch">
+          <input class="form-check-input" onclick="modoOscuro()" type="checkbox" id="flexSwitchCheckDefault">
+        </div>
+      </div>
+    </nav>
+
+
+    <section id="hero">
+        <div class="row g-0 h-100">
+          <div class="col-lg-6 d-flex">
+              <div class="content mx-auto align-self-center px-4 my-5">
+                  <small class="d-block text-primary mb-3"><span class="badge bg-primary me-2 text-dark">Nuevo</span>Encuentra el clima de tu ciudad
+                  </small>
+                  <h1 class="display-5 fw-bold mb-4" id="mo3">Consulta el clima<span class="text-primary">.</span></h1>
+                  <p class="lead mb-4" id="mo4">Aqui puedes ver el clima de tu ciudad en la que te encuentres.</p>
+                  <a onclick="consultaCiudadActual()" class="btn btn-primary text-dark mb-5 fw-bold">Usar ubicación actual</a>
+                  <div id="eDiv" class="" style="font-size:50px;color:rgb(247, 52, 52)">
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6 d-flex" id="mopicante">
+            <div class="content mx-auto align-self-center px-4 my-5">
+               <h1 class="display-5 fw-bold mb-4">Novedades<span class="text-primary">.</span></h1>
+               <p class="lead mb-4">Aqui puedes ver el clima de las ciudades mas relevantes del país.</p>
+               <div>
+                <table class="table table-warning">
+                  <thead>
+                    <tr>
+                      <th scope="col">.</th>
+                      <th scope="col">Ciudad</th>
+                      <th scope="col">Clima</th>
+                      <th scope="col">Animado</th>
+                      <th scope="col">Grados</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">.</th>
+                      <td id="tableId0Ciudad">Buenos Aires</td>
+                      <td id="tableId0Clima"><p></p></td>
+                      <td id="tableId0Icono"><p></p></td>
+                      <td id="tableId0Grados"><p></p></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">.</th>
+                      <td id="tableId1Ciudad">Tucumán</td>
+                      <td id="tableId1Clima"><p></p></td>
+                      <td id="tableId1Icono"><p></p></td>
+                      <td id="tableId1Grados"><P></P></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">.</th>
+                      <td id="tableId2Ciudad">Rosario</td>
+                      <td id="tableId2Clima"></td>
+                      <td id="tableId2Icono"></td>
+                      <td id="tableId2Grados"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">.</th>
+                      <td id="tableId3Ciudad">Córdoba</td>
+                      <td id="tableId3Clima"></td>
+                      <td id="tableId3Icono"></td>
+                      <td id="tableId3Grados"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">.</th>
+                      <td id="tableId4Ciudad">La Plata</td>
+                      <td id="tableId4Clima"></td>
+                      <td id="tableId4Icono"></td>
+                      <td id="tableId4Grados"></td>
+                    </tr>
+                  </tbody>
+                </table>
+               </div>
+          </div>
+        </div>
+    </section>
+    <section class="d-flex pt-5 pb-0 h-100">
+      <div class="container align-self-center">
+        <div class="bg-primary text-dark text-center p-5 rounded w-75 mx-auto mb-3">
+          <h2 class="display-5 fw-bold">Busca una ciudad</h2>
+          <p class="lead">Hace tu consulta con cualquier ciudad del mundo.</p>   
+          <div class="cta-form position-relative mx-auto d-none d-md-block">
+            <input id="ciudad" type="email" class="form-control" placeholder="Ingresa el nombre de una ciudad">
+            <button type="submit" onclick="consultaPorCiudad()" class="btn btn-primary fw-bold text-dark position-absolute">Buscar</button>
+          </div>
+          <div class="d-md-none">
+            <input type="email" id="ciudad2" class="form-control mb-3" placeholder="Ingresa el nombre de una ciudad">
+            <button type="submit" onclick="consultaPorCiudad2()" class="btn btn-dark fw-bold text-warning w-100">Buscar</button>
+          </div>
+          <div id="toast2" class="mt-4">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="d-flex pt-5 pb-0 h-100" id="mopicante1">
+      <div class="container align-self-center">
+        <div class="row mb-3">
+          <div class="col-lg-3 col-sm-6 my-4">
+            <h5 class="fw-bold mb-3">Descubre más</h5>
+            <ul class="list-unstyled">
+              <li class="mb-3"><p class="text-decoration-none">Registrarse</p></li>
+              <li class="mb-3"><p class="text-decoration-none">Portafolios</p></li>
+              <li><p class="text-decoration-none">Otros Sitios Web</p></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-sm-6 my-4">
+            <h5 class="fw-bold mb-3">Info</h5>
+            <ul class="list-unstyled">
+              <li class="mb-3"><p class="text-decoration-none">Consultas</p></li>
+              <li class="mb-3"><p class="text-decoration-none">Clima</p></li>
+              <li><p class="text-decoration-none">Grados Celsius</p></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-sm-6 my-4">
+            <h5 class="fw-bold mb-3">Tecnologías</h5>
+            <ul class="list-unstyled">
+              <li class="mb-3"><p class="text-decoration-none">HTML5</p></li>
+              <li class="mb-3"><p class="text-decoration-none">CSS-Bootstrap5</p></li>
+              <li><p class="text-decoration-none">JavaScript</p></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-sm-6 my-4">
+            <h5 class="fw-bold mb-3">ClimaArg</h5>
+            <ul class="list-unstyled">
+              <li class="mb-3">Concepción Tucumán</li>
+              <li>
+                <ul class="list-inline">
+                  <li class="list-inline-item me-3"><a href="https://www.facebook.com/rodrigo.romano.524381" class="lead" id="iconRedes"><i class="fab fa-facebook"></i></a></li>
+                  <li class="list-inline-item me-3"><a href="https://www.instagram.com/rodri_oficial001/?hl=es-la" class="lead" id="iconRedes1"><i class="fab fa-instagram"></i></a></li>
+                  <li class="list-inline-item"><a href="https://www.linkedin.com/in/rodrigo-romano-4a52a7195" class="lead" id="iconRedes2"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-top py-4">
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <small>2021. ClimaArg. Todos los derechos reservados</small>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <ul class="list-inline text-lg-end">
+                <li class="list-inline-item"><p class="text-decoration-none"><small>Términos y condiciones</small></p></li>
+                <li class="list-inline-item"><p class="text-decoration-none"><small>Aviso de privacidad</small></p></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Optional JavaScript; Magia del Clima -->
+      <script src="js/app.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ffec4ec2ed.js" crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
