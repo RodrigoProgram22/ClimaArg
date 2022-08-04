@@ -1,127 +1,181 @@
 :root {
-    --primary: #ffc70f;
-    --dark: #000000;
-    --light: #ffffff;
-    --grey: #f5f5f5;
+  --primary: #ffc70f;
+  --dark: #000000;
+  --light: #ffffff;
+  --grey: #f5f5f5;
 }
 body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--dark);
+  font-family: "Poppins", sans-serif;
+  color: var(--dark);
 }
 
 .py-6 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .navbar {
-    min-height: 90px;
-    width: 100%;
+  min-height: 90px;
+  width: 100%;
 }
 
 .navbar .btn {
-    padding: .625rem 1.25rem !important;
+  padding: 0.625rem 1.25rem !important;
 }
 
 .text-primary {
-    color: var(--primary) !important;
+  color: var(--primary) !important;
 }
 
 .btn {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .btn-primary {
-    background-color: var(--primary);
-    border-color: var(--primary);
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary);
-    border-color: var(--primary);
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 .btn-light {
-    background-color: var(--light);
-    color: var(--primary);
+  background-color: var(--light);
+  color: var(--primary);
 }
 
 .bg-primary {
-    background-color: var(--primary) !important;
+  background-color: var(--primary) !important;
 }
 
 .bg-light {
-    background-color: var(--grey) !important;
+  background-color: var(--grey) !important;
 }
 
 .content {
-    max-width: 500px;
+  max-width: 500px;
 }
 
 section {
-    height: 600px;
+  height: 600px;
 }
 
 .step {
-    display: flex;
-    position: relative;
-    justify-content: center;
+  display: flex;
+  position: relative;
+  justify-content: center;
 }
 
 .step::after {
-    content: "";
-    border-right: 1px solid var(--dark);
-    opacity: .2;
-    height: 60px;
-    position: absolute;
-    top: 34px;
+  content: "";
+  border-right: 1px solid var(--dark);
+  opacity: 0.2;
+  height: 60px;
+  position: absolute;
+  top: 34px;
 }
 
 .navbar-toggler:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .call-to-action {
-    border-radius: 50px;
+  border-radius: 50px;
 }
 
 .call-to-action img {
-    max-width: 280px;
+  max-width: 280px;
 }
 
 .cta-form {
-    max-width: 480px;
+  max-width: 480px;
 }
 
 .cta-form .form-control {
-    min-height: 82px;
+  min-height: 82px;
 }
 
 .cta-form .btn {
-    top: 12px;
-    right: 12px;
+  top: 12px;
+  right: 12px;
 }
 .tostada {
-    margin-left: auto;
-    margin-right: auto;
-    color: red;
-    justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: red;
+  justify-content: center;
 }
-.mapita{
-    height: 600px;
+.mapita {
+  height: 600px;
 }
 
 @media (max-width: 992px) {
-    .navbar {
-        position: relative !important;
-    }
-    section {
-        height: unset;
-    }
-    .call-to-action img {
-        max-width: 100%;
-    }
-    .w-75 {
-        width: 100% !important;
-    }
+  .navbar {
+    position: relative !important;
+  }
+  section {
+    height: unset;
+  }
+  .call-to-action img {
+    max-width: 100%;
+  }
+  .w-75 {
+    width: 100% !important;
+  }
+}
+
+/* modo oscuro */
+/* From uiverse.io by @alexruix */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  --background: #28096b;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  transition: 0.5s;
+}
+
+input:checked + .slider {
+  background-color: #522ba7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
 }
