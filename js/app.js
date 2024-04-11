@@ -201,7 +201,7 @@ let idMO4 = document.getElementById("mo4");
 let idMO5 = document.getElementById("mo5");
 let idMO6 = document.getElementById("mopicante");
 let idMO7 = document.getElementById("mopicante1");
-let bOscuro = document.getElementById("flexSwitchCheckDefault").value;
+let bOscuro = document.getElementById("flexSwitchCheckDefault");
 let iconRedes = document.getElementById("iconRedes");
 let iconRedes1 = document.getElementById("iconRedes1");
 let iconRedes2 = document.getElementById("iconRedes2");
@@ -210,22 +210,8 @@ iconRedes1.classList = "lead text-dark";
 iconRedes2.classList = "lead text-dark";
 
 function modoOscuro() {
-  if (bOscuro === "on") {
-    bOscuro = "off";
-
-    idMO2.style = "color: white;";
-    idMO3.style = "color: white;";
-    idMO4.style = "color: white;";
-    idMO5.style.backgroundColor = "black";
-    idMO6.style = "color: white;";
-    idMO6.style.backgroundColor = "black";
-    idMO7.style = "color: white;";
-    idMO7.style.backgroundColor = "black";
-    iconRedes.classList = "lead text-light";
-    iconRedes1.classList = "lead text-light";
-    iconRedes2.classList = "lead text-light";
-  } else {
-    bOscuro = "on";
+  if (bOscuro.value === "claro") {
+    bOscuro.value = "oscuro";
     idMO2.style = "color: black;";
     idMO3.style = "color: black;";
     idMO4.style = "color: black;";
@@ -237,5 +223,18 @@ function modoOscuro() {
     iconRedes.classList = "lead text-dark";
     iconRedes1.classList = "lead text-dark";
     iconRedes2.classList = "lead text-dark";
+  } else {
+    bOscuro.value = "claro";
+    idMO2.style = "color: white;";
+    idMO3.style = "color: white;";
+    idMO4.style = "color: white;";
+    idMO5.style.backgroundColor = "black";
+    idMO6.style = "color: white;";
+    idMO6.style.backgroundColor = "black";
+    idMO7.style = "color: white;";
+    idMO7.style.backgroundColor = "black";
+    iconRedes.classList = "lead text-light";
+    iconRedes1.classList = "lead text-light";
+    iconRedes2.classList = "lead text-light";
   }
 }
